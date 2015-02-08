@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="lib/flexboxgrid/dist/flexboxgrid.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <h1>Duh</h1>
+<body ng-app="app">
+  <notes>
+    <note ng-repeat="note in NotesCtrl.notes.all"
+    title="{{note.title}}" body="{{note.body}}"></note>
+  </notes>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="app.js"></script>
+  <script type="text/ng-template" id="note.html">
+    <div class="note">
+      <h3 class="note-title">{{ NoteCtrl.title }}</h3>
+      <p class="note-body"> {{ NoteCtrl.body }}</p>
+    </div>
+  </script>
 </body>
 </html>
